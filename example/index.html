@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOOTSTRAP.v4.4.1 DEMO</title>
+  <link rel="stylesheet" href="/dist/css/bootstrap.min.css">
+  <script src="/dist/js/jquery.min.js"></script>
+  <script src="/dist/js/popper.min.js"></script>
+  <script src="/dist/js/bootstrap.min.js"></script>
+  <style>
+    .custom-card {
+      width: 200px;
+      display: inline-block;
+      margin: 0 0 5px 5px;
+    }
+
+    .custom-dropdown {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand bg-primary navbar-dark">
+    <a href="#" class="navbar-brand">
+      BRAND
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <span class="navbar-text">
+        Nav Text
+      </span>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="#" class="nav-link">导航1</a>
+        </li>
+        <li class="nav-item active">
+          <a href="#" class="nav-link">导航2</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">导航3</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="dropdownitem" data-toggle="dropdown">
+            Dropdown Links
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Dropdown link 1</a>
+            <a href="#" class="dropdown-item active">Dropdown link 2</a>
+            <a href="#" class="dropdown-item">Dropdown link 3</a>
+          </div>
+        </li>
+        <form action="#" class="form-inline">
+          <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Username">
+          </div>
+        </form>
+        <form action="#" class="form-inline">
+          <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+                Select...
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Google</a>
+                <a class="dropdown-item" href="#">Baidu</a>
+                <a class="dropdown-item" href="#">Sougou</a>
+              </div>
+            </div>
+            <input type="text" class="form-control" placeholder="Keywords">
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-info">
+                Search
+              </button>
+            </div>
+          </div>
+        </form>
+      </ul>
+    </div>
+  </nav>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1>Bootstrap 4.4.1</h1>
+      <p>样式展示</p>
+      <p>jumbotron jumbotron-fluid</p>
+    </div>
+  </div>
+  <div id="container-alert" class="container">
+    <h1>信息提示框</h1>
+    <hr>
+    <div class="alert alert-success alert-dismissible fade show">
+      信息提示框 成功 alert-success <a href="#" class="alert-link">这是信息提示框链接</a>
+      <button class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <div class="alert alert-info alert-dismissible fade show">
+      信息提示框 信息 alert-info <a href="#" class="alert-link">这是信息提示框链接</a>
+      <button class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <div class="alert alert-warning alert-dismissible fade show">
+      信息提示框 警告 alert-warning <a href="#" class="alert-link">这是信息提示框链接</a>
+      <button class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show">
+      信息提示框 错误 alert-danger <a href="#" class="alert-link">这是信息提示框链接</a>
+      <button class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <div class="alert alert-primary alert-dismissible fade show">
+      信息提示框 首选 alert-primary <a href="#" class="alert-link">这是信息提示框链接</a>
+      <button class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <div class="alert alert-secondary alert-dismissible fade show">
+      信息提示框 次要 alert-secondary <a href="#" class="alert-link">这是信息提示框链接</a>
+      <button class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <div class="alert alert-dark alert-dismissible fade show">
+      信息提示框 深灰色 alert-dark <a href="#" class="alert-link">这是信息提示框链接</a>
+      <button class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <div class="alert alert-light alert-dismissible fade show">
+      信息提示框 浅灰色 alert-light <a href="#" class="alert-link">这是信息提示框链接</a>
+      <button class="close" data-dismiss="alert">&times;</button>
+    </div>
+  </div>
+
+  <div id="container-btns" class="container">
+    <h1>按钮</h1>
+    <div class="card">
+      <div class="card-header">
+        基本按钮
+      </div>
+      <div class="card-body">
+        <button type="button" class="btn">基本按钮</button>
+        <button type="button" class="btn btn-primary">主要按钮</button>
+        <button type="button" class="btn btn-secondary">次要按钮</button>
+        <button type="button" class="btn btn-success">成功</button>
+        <button type="button" class="btn btn-info">信息</button>
+        <button type="button" class="btn btn-warning">警告</button>
+        <button type="button" class="btn btn-danger">危险</button>
+        <button type="button" class="btn btn-dark">黑色</button>
+        <button type="button" class="btn btn-light">浅色</button>
+        <button type="button" class="btn btn-link">链接</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        按钮设置边框
+      </div>
+      <div class="card-body">
+        <button type="button" class="btn btn-outline-primary">主要按钮</button>
+        <button type="button" class="btn btn-outline-secondary">次要按钮</button>
+        <button type="button" class="btn btn-outline-success">成功</button>
+        <button type="button" class="btn btn-outline-info">信息</button>
+        <button type="button" class="btn btn-outline-warning">警告</button>
+        <button type="button" class="btn btn-outline-danger">危险</button>
+        <button type="button" class="btn btn-outline-dark">黑色</button>
+        <button type="button" class="btn btn-outline-light text-dark">浅色</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        不同大小的按钮
+      </div>
+      <div class="card-body">
+        <button type="button" class="btn btn-primary btn-lg">大号按钮</button>
+        <button type="button" class="btn btn-primary">默认按钮</button>
+        <button type="button" class="btn btn-primary btn-sm">小号按钮</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        块级按钮
+      </div>
+      <div class="card-body">
+        <button type="button" class="btn btn-block btn-primary">主要按钮</button>
+        <button type="button" class="btn btn-block btn-secondary">次要按钮</button>
+        <button type="button" class="btn btn-block btn-success">成功</button>
+        <button type="button" class="btn btn-block btn-info">信息</button>
+        <button type="button" class="btn btn-block btn-warning">警告</button>
+        <button type="button" class="btn btn-block btn-danger">危险</button>
+        <button type="button" class="btn btn-block btn-dark">黑色</button>
+        <button type="button" class="btn btn-block btn-light">浅色</button>
+        <button type="button" class="btn btn-block btn-link">链接</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        激活和禁用的按钮
+      </div>
+      <div class="card-body">
+        <button type="button" class="btn btn-primary active">点击后的按钮</button>
+        <button type="button" class="btn btn-primary" disabled>禁止点击的按钮</button>
+        <a href="#" class="btn btn-primary disabled">禁止点击的链接</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="container-btn-group" class="container">
+    <h1>按钮组</h1>
+    <div class="card">
+      <div class="card-body">
+        <div class="btn-group btn-group-lg">
+          <button type="button" class="btn btn-primary">Apple</button>
+          <button type="button" class="btn btn-primary">Samsung</button>
+          <button type="button" class="btn btn-primary">Sony</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary">Apple</button>
+          <button type="button" class="btn btn-primary">Samsung</button>
+          <button type="button" class="btn btn-primary">Sony</button>
+        </div>
+        <div class="btn-group btn-group-sm">
+          <button type="button" class="btn btn-primary">Apple</button>
+          <button type="button" class="btn btn-primary">Samsung</button>
+          <button type="button" class="btn btn-primary">Sony</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        垂直按钮组
+      </div>
+      <div class="card-body">
+        <div class="btn-group-vertical">
+          <button type="button" class="btn btn-primary">Apple</button>
+          <button type="button" class="btn btn-primary">Samsung</button>
+          <button type="button" class="btn btn-primary">Sony</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        内嵌按钮组及下拉菜单
+      </div>
+      <div class="card-body">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary">Apple</button>
+          <button type="button" class="btn btn-primary">Samsung</button>
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+              Sony
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Tablet</a>
+              <a class="dropdown-item" href="#">Smartphone</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        拆分按钮下拉菜单
+      </div>
+      <div class="card-body">
+        <div class="btn-group-vertical">
+          <button type="button" class="btn btn-primary">Apple</button>
+          <button type="button" class="btn btn-primary">Samsung</button>
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+              Sony
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Tablet</a>
+              <a class="dropdown-item" href="#">Smartphone</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="container-badges" class="container">
+    <h1>徽章</h1>
+    <div class="card">
+      <div class="card-body">
+        <h1>测试标题 <span class="badge badge-secondary">New</span></h1>
+        <h2>测试标题 <span class="badge badge-secondary">New</span></h2>
+        <h3>测试标题 <span class="badge badge-secondary">New</span></h3>
+        <h4>测试标题 <span class="badge badge-secondary">New</span></h4>
+        <h5>测试标题 <span class="badge badge-secondary">New</span></h5>
+        <h6>测试标题 <span class="badge badge-secondary">New</span></h6>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        各种颜色类型的徽章
+      </div>
+      <div class="card-body">
+        <span class="badge badge-primary">主要</span>
+        <span class="badge badge-secondary">次要</span>
+        <span class="badge badge-success">成功</span>
+        <span class="badge badge-danger">危险</span>
+        <span class="badge badge-warning">警告</span>
+        <span class="badge badge-info">信息</span>
+        <span class="badge badge-light">浅色</span>
+        <span class="badge badge-dark">深色</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        徽章插入到元素内
+      </div>
+      <div class="card-body">
+        <button type="button" class="btn btn-primary">
+          Messages <span class="badge badge-light">4</span>
+        </button>
+        <button type="button" class="btn btn-primary">
+          Messages <span class="badge badge-warning">4</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="container-progress" class="container">
+    <h1>进度条</h1>
+    <div class="card">
+      <div class="card-body">
+        <div class="progress">
+          <div class="progress-bar" style="width:20%"></div>
+        </div>
+        <br>
+        <div class="progress">
+          <div class="progress-bar" style="width:50%"></div>
+        </div>
+        <br>
+        <div class="progress">
+          <div class="progress-bar" style="width:70%"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        进度条高度
+      </div>
+      <div class="card-body">
+        <div class="progress" style="height:20px;">
+          <div class="progress-bar" style="width:40%;">height:20px</div>
+        </div>
+        <br>
+        <div class="progress" style="height:30px;">
+          <div class="progress-bar" style="width:40%;">height:30px</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        进度条标签
+      </div>
+      <div class="card-body">
+        <div class="progress">
+          <div class="progress-bar" style="width:70%">70%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        不同颜色的进度条
+      </div>
+      <div class="card-body">
+        <div class="progress">
+          <div class="progress-bar bg-success" style="width:40%">bg-success</div>
+        </div>
+        <br>
+        <div class="progress">
+          <div class="progress-bar bg-info" style="width:50%">bg-info</div>
+        </div>
+        <br>
+        <div class="progress">
+          <div class="progress-bar bg-warning" style="width:60%">bg-warning</div>
+        </div>
+        <br>
+        <div class="progress">
+          <div class="progress-bar bg-danger" style="width:70%">bg-danger</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        条纹的进度条
+      </div>
+      <div class="card-body">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped" style="width:40%"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        动画进度条
+      </div>
+      <div class="card-body">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        混合色彩进度条
+      </div>
+      <div class="card-body">
+        <div class="progress">
+          <div class="progress-bar bg-success" style="width:40%">
+            Free Space
+          </div>
+          <div class="progress-bar bg-warning" style="width:10%">
+            Warning
+          </div>
+          <div class="progress-bar bg-danger" style="width:20%">
+            Danger
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="container-pager" class="container">
+    <h1>分页</h1>
+    <div class="card">
+      <div class="card-body">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        当前页页码状态
+      </div>
+      <div class="card-body">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item active"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        不可点击的分页链接
+      </div>
+      <div class="card-body">
+        <ul class="pagination">
+          <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        分页显示大小
+      </div>
+      <div class="card-body">
+        <ul class="pagination pagination-lg">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+
+        <ul class="pagination pagination-sm">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        面包屑导航
+      </div>
+      <div class="card-body">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Photos</a></li>
+          <li class="breadcrumb-item"><a href="#">Summer 2017</a></li>
+          <li class="breadcrumb-item"><a href="#">Italy</a></li>
+          <li class="breadcrumb-item active">Rome</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="container-list-group" class="container">
+    <h1>列表组</h1>
+    <div class="card">
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item">普通的列表项</li>
+          <li class="list-group-item active">激活的项</li>
+          <li class="list-group-item disabled">禁用的项</li>
+          <a href="#" class="list-group-item list-group-item-action">链接列表项</a>
+          <li class="list-group-item list-group-item-success">成功列表项</li>
+          <li class="list-group-item list-group-item-secondary">次要列表项</li>
+          <li class="list-group-item list-group-item-info">信息列表项</li>
+          <li class="list-group-item list-group-item-warning">警告列表项</li>
+          <li class="list-group-item list-group-item-danger">危险列表项</li>
+          <li class="list-group-item list-group-item-primary">主要列表项</li>
+          <li class="list-group-item list-group-item-dark">深灰色列表项</li>
+          <li class="list-group-item list-group-item-light">浅色列表项</li>
+          <a href="#" class="list-group-item list-group-item-action">链接的激活列表项</a>
+          <a href="#" class="list-group-item list-group-item-success">链接的成功列表项</a>
+          <a href="#" class="list-group-item list-group-item-secondary">链接的次要列表项</a>
+          <a href="#" class="list-group-item list-group-item-info">链接的信息列表项</a>
+          <a href="#" class="list-group-item list-group-item-warning">链接的警告列表项</a>
+          <a href="#" class="list-group-item list-group-item-danger">链接的危险列表项</a>
+          <a href="#" class="list-group-item list-group-item-primary">链接的主要列表项</a>
+          <a href="#" class="list-group-item list-group-item-dark">链接的深灰色列表项</a>
+          <a href="#" class="list-group-item list-group-item-light">链接的浅色列表项</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="" class="container">
+    <h1>卡片</h1>
+    <div class="card">
+      <div class="card-body">
+        <div class="card-header">
+          Card header
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some example text. Some example text.</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+          <div class="card-footer">
+            Card footer
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        多种颜色的卡片
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="card custom-card">
+            <div class="card-body">Basic card</div>
+          </div>
+          <br>
+          <div class="card bg-primary text-white custom-card">
+            <div class="card-body">Primary card</div>
+          </div>
+          <br>
+          <div class="card bg-success text-white custom-card">
+            <div class="card-body">Success card</div>
+          </div>
+          <br>
+          <div class="card bg-info text-white custom-card">
+            <div class="card-body">Info card</div>
+          </div>
+          <br>
+          <div class="card bg-warning text-white custom-card">
+            <div class="card-body">Warning card</div>
+          </div>
+          <br>
+          <div class="card bg-danger text-white custom-card">
+            <div class="card-body">Danger card</div>
+          </div>
+          <br>
+          <div class="card bg-secondary text-white custom-card">
+            <div class="card-body">Secondary card</div>
+          </div>
+          <br>
+          <div class="card bg-dark text-white custom-card">
+            <div class="card-body">Dark card</div>
+          </div>
+          <br>
+          <div class="card bg-light text-dark custom-card">
+            <div class="card-body">Light card</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+
+      </div>
+      <div class="card-body">
+
+      </div>
+    </div>
+  </div>
+
+  <div id="container-card" class="container">
+    <h1>下拉菜单</h1>
+    <div class="card">
+      <div class="card-body">
+        <div class="dropdown">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Dropdown button
+          </button>
+          <div class="dropdown-menu">
+            <h5 class="dropdown-header">Dropdown header 1</h5>
+            <a class="dropdown-item" href="#">Link 1</a>
+            <a class="dropdown-item" href="#">Link 2</a>
+            <h5 class="dropdown-header">Dropdown header 2</h5>
+            <a class="dropdown-item" href="#">Link 3</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Link 4</a>
+            <a class="dropdown-item active" href="#">可用项</a>
+            <a class="dropdown-item disabled" href="#">禁用项</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        下拉菜单的定位
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="dropdown custom-dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+              Dropdown button right
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">Link 1</a>
+              <a class="dropdown-item" href="#">Link 2</a>
+              <a class="dropdown-item" href="#">Link 3</a>
+              <a class="dropdown-item" href="#">Link 4</a>
+            </div>
+          </div>
+          <div class="dropdown custom-dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+              Dropdown button left
+            </button>
+            <div class="dropdown-menu dropdown-menu-left">
+              <a class="dropdown-item" href="#">Link 1</a>
+              <a class="dropdown-item" href="#">Link 2</a>
+              <a class="dropdown-item" href="#">Link 3</a>
+              <a class="dropdown-item" href="#">Link 4</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        下拉菜单弹出方向设置
+      </div>
+      <div class="card-body">
+        <div class="btn-group dropright">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Dropright
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Link 1</a>
+            <a class="dropdown-item" href="#">Link 2</a>
+            <a class="dropdown-item" href="#">Link 3</a>
+            <a class="dropdown-item" href="#">Link 4</a>
+          </div>
+        </div>
+        <div class="btn-group dropright">
+          <button type="button" class="btn btn-secondary">
+            Split dropright
+          </button>
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropright</span>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Link 1</a>
+            <a class="dropdown-item" href="#">Link 2</a>
+            <a class="dropdown-item" href="#">Link 3</a>
+            <a class="dropdown-item" href="#">Link 4</a>
+          </div>
+        </div>
+        <div class="btn-group dropup">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Dropup
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Link 1</a>
+            <a class="dropdown-item" href="#">Link 2</a>
+            <a class="dropdown-item" href="#">Link 3</a>
+            <a class="dropdown-item" href="#">Link 4</a>
+          </div>
+        </div>
+
+        <div class="btn-group dropup">
+          <button type="button" class="btn btn-secondary">
+            Split dropup
+          </button>
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Link 1</a>
+            <a class="dropdown-item" href="#">Link 2</a>
+            <a class="dropdown-item" href="#">Link 3</a>
+            <a class="dropdown-item" href="#">Link 4</a>
+          </div>
+        </div>
+
+        <div class="btn-group dropleft">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Dropleft
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Link 1</a>
+            <a class="dropdown-item" href="#">Link 2</a>
+            <a class="dropdown-item" href="#">Link 3</a>
+            <a class="dropdown-item" href="#">Link 4</a>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <div class="btn-group dropleft" role="group">
+            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">Toggle Dropleft</span>
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Link 1</a>
+              <a class="dropdown-item" href="#">Link 2</a>
+              <a class="dropdown-item" href="#">Link 3</a>
+              <a class="dropdown-item" href="#">Link 4</a>
+            </div>
+          </div>
+          <button type="button" class="btn btn-secondary">
+            Split dropleft
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        按钮中设置下拉菜单
+      </div>
+      <div class="card-body">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary">Sony</button>
+          <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+            <span class="caret"></span>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Tablet</a>
+            <a class="dropdown-item" href="#">Smartphone</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="container-collapse" class="container">
+    <h1>折叠</h1>
+    <div class="card">
+      <div class="card-body">
+        <a href="#demo" class="btn btn-primary" data-toggle="collapse">Collapsible</a>
+
+        <div id="demo" class="collapse">
+          Lorem ipsum dolor text....
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        手风琴效果
+      </div>
+      <div class="card-body">
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header">
+              <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                选项一
+              </a>
+            </div>
+            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+              <div class="card-body">
+                #1 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+              选项二
+            </a>
+            </div>
+            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                #2 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+                <p>
+
+                #2 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！-2
+                </p>
+                <p>
+
+                #2 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！-3
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                选项三
+              </a>
+            </div>
+            <div id="collapseThree" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                #3 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+              </div>
+            </div>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="" class="container">
+    <h1></h1>
+    <div class="card">
+      <div class="card-header">
+
+      </div>
+      <div class="card-body">
+
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+
+      </div>
+      <div class="card-body">
+
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <p>Footer</p>
+    </div>
+  </div>
+</body>
+
+</html>
