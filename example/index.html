@@ -9,7 +9,12 @@
   <script src="/example/js/jquery.min.js"></script>
   <script src="/example/js/popper.min.js"></script>
   <script src="/dist/js/bootstrap.min.js"></script>
+  <script src="/example/js/custom.js"></script>
   <style>
+    body{
+      position: relative;
+    }
+
     .custom-card {
       width: 200px;
       display: inline-block;
@@ -28,6 +33,19 @@
       margin: 6px;
     }
 
+    #sidebar {
+      height: 100%;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      overflow: scroll;
+      padding-bottom: 100px;
+    }
+
+    #sidebar::-webkit-scrollbar {
+      display: none;
+    }
+
     .border-2 {
       display: inline-block;
       width: 70px;
@@ -35,11 +53,10 @@
       margin: 6px;
       background-color: #555;
     }
-
   </style>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#sidebar" data-offset="1">
   <nav class="navbar navbar-expand bg-primary navbar-dark">
     <a href="#" class="navbar-brand">
       BRAND
@@ -113,1750 +130,1817 @@
       <p>jumbotron jumbotron-fluid</p>
     </div>
   </div>
-  <div id="container-alert" class="container">
-    <h1>信息提示框</h1>
-    <hr>
-    <div class="alert alert-success alert-dismissible fade show">
-      信息提示框 成功 alert-success <a href="#" class="alert-link">这是信息提示框链接</a>
-      <button class="close" data-dismiss="alert">&times;</button>
-    </div>
-    <div class="alert alert-info alert-dismissible fade show">
-      信息提示框 信息 alert-info <a href="#" class="alert-link">这是信息提示框链接</a>
-      <button class="close" data-dismiss="alert">&times;</button>
-    </div>
-    <div class="alert alert-warning alert-dismissible fade show">
-      信息提示框 警告 alert-warning <a href="#" class="alert-link">这是信息提示框链接</a>
-      <button class="close" data-dismiss="alert">&times;</button>
-    </div>
-    <div class="alert alert-danger alert-dismissible fade show">
-      信息提示框 错误 alert-danger <a href="#" class="alert-link">这是信息提示框链接</a>
-      <button class="close" data-dismiss="alert">&times;</button>
-    </div>
-    <div class="alert alert-primary alert-dismissible fade show">
-      信息提示框 首选 alert-primary <a href="#" class="alert-link">这是信息提示框链接</a>
-      <button class="close" data-dismiss="alert">&times;</button>
-    </div>
-    <div class="alert alert-secondary alert-dismissible fade show">
-      信息提示框 次要 alert-secondary <a href="#" class="alert-link">这是信息提示框链接</a>
-      <button class="close" data-dismiss="alert">&times;</button>
-    </div>
-    <div class="alert alert-dark alert-dismissible fade show">
-      信息提示框 深灰色 alert-dark <a href="#" class="alert-link">这是信息提示框链接</a>
-      <button class="close" data-dismiss="alert">&times;</button>
-    </div>
-    <div class="alert alert-light alert-dismissible fade show">
-      信息提示框 浅灰色 alert-light <a href="#" class="alert-link">这是信息提示框链接</a>
-      <button class="close" data-dismiss="alert">&times;</button>
-    </div>
-  </div>
 
-  <div id="container-btns" class="container">
-    <h1>按钮</h1>
-    <div class="card">
-      <div class="card-header">
-        基本按钮
-      </div>
-      <div class="card-body">
-        <button type="button" class="btn">基本按钮</button>
-        <button type="button" class="btn btn-primary">主要按钮</button>
-        <button type="button" class="btn btn-secondary">次要按钮</button>
-        <button type="button" class="btn btn-success">成功</button>
-        <button type="button" class="btn btn-info">信息</button>
-        <button type="button" class="btn btn-warning">警告</button>
-        <button type="button" class="btn btn-danger">危险</button>
-        <button type="button" class="btn btn-dark">黑色</button>
-        <button type="button" class="btn btn-light">浅色</button>
-        <button type="button" class="btn btn-link">链接</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        按钮设置边框
-      </div>
-      <div class="card-body">
-        <button type="button" class="btn btn-outline-primary">主要按钮</button>
-        <button type="button" class="btn btn-outline-secondary">次要按钮</button>
-        <button type="button" class="btn btn-outline-success">成功</button>
-        <button type="button" class="btn btn-outline-info">信息</button>
-        <button type="button" class="btn btn-outline-warning">警告</button>
-        <button type="button" class="btn btn-outline-danger">危险</button>
-        <button type="button" class="btn btn-outline-dark">黑色</button>
-        <button type="button" class="btn btn-outline-light text-dark">浅色</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        不同大小的按钮
-      </div>
-      <div class="card-body">
-        <button type="button" class="btn btn-primary btn-lg">大号按钮</button>
-        <button type="button" class="btn btn-primary">默认按钮</button>
-        <button type="button" class="btn btn-primary btn-sm">小号按钮</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        块级按钮
-      </div>
-      <div class="card-body">
-        <button type="button" class="btn btn-block btn-primary">主要按钮</button>
-        <button type="button" class="btn btn-block btn-secondary">次要按钮</button>
-        <button type="button" class="btn btn-block btn-success">成功</button>
-        <button type="button" class="btn btn-block btn-info">信息</button>
-        <button type="button" class="btn btn-block btn-warning">警告</button>
-        <button type="button" class="btn btn-block btn-danger">危险</button>
-        <button type="button" class="btn btn-block btn-dark">黑色</button>
-        <button type="button" class="btn btn-block btn-light">浅色</button>
-        <button type="button" class="btn btn-block btn-link">链接</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        激活和禁用的按钮
-      </div>
-      <div class="card-body">
-        <button type="button" class="btn btn-primary active">点击后的按钮</button>
-        <button type="button" class="btn btn-primary" disabled>禁止点击的按钮</button>
-        <a href="#" class="btn btn-primary disabled">禁止点击的链接</a>
-      </div>
-    </div>
-  </div>
-
-  <div id="container-btn-group" class="container">
-    <h1>按钮组</h1>
-    <div class="card">
-      <div class="card-body">
-        <div class="btn-group btn-group-lg">
-          <button type="button" class="btn btn-primary">Apple</button>
-          <button type="button" class="btn btn-primary">Samsung</button>
-          <button type="button" class="btn btn-primary">Sony</button>
-        </div>
-        <div class="btn-group">
-          <button type="button" class="btn btn-primary">Apple</button>
-          <button type="button" class="btn btn-primary">Samsung</button>
-          <button type="button" class="btn btn-primary">Sony</button>
-        </div>
-        <div class="btn-group btn-group-sm">
-          <button type="button" class="btn btn-primary">Apple</button>
-          <button type="button" class="btn btn-primary">Samsung</button>
-          <button type="button" class="btn btn-primary">Sony</button>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        垂直按钮组
-      </div>
-      <div class="card-body">
-        <div class="btn-group-vertical">
-          <button type="button" class="btn btn-primary">Apple</button>
-          <button type="button" class="btn btn-primary">Samsung</button>
-          <button type="button" class="btn btn-primary">Sony</button>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        内嵌按钮组及下拉菜单
-      </div>
-      <div class="card-body">
-        <div class="btn-group">
-          <button type="button" class="btn btn-primary">Apple</button>
-          <button type="button" class="btn btn-primary">Samsung</button>
-          <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-              Sony
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Tablet</a>
-              <a class="dropdown-item" href="#">Smartphone</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        拆分按钮下拉菜单
-      </div>
-      <div class="card-body">
-        <div class="btn-group-vertical">
-          <button type="button" class="btn btn-primary">Apple</button>
-          <button type="button" class="btn btn-primary">Samsung</button>
-          <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-              Sony
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Tablet</a>
-              <a class="dropdown-item" href="#">Smartphone</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="container-badges" class="container">
-    <h1>徽章</h1>
-    <div class="card">
-      <div class="card-body">
-        <h1>测试标题 <span class="badge badge-secondary">New</span></h1>
-        <h2>测试标题 <span class="badge badge-secondary">New</span></h2>
-        <h3>测试标题 <span class="badge badge-secondary">New</span></h3>
-        <h4>测试标题 <span class="badge badge-secondary">New</span></h4>
-        <h5>测试标题 <span class="badge badge-secondary">New</span></h5>
-        <h6>测试标题 <span class="badge badge-secondary">New</span></h6>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        各种颜色类型的徽章
-      </div>
-      <div class="card-body">
-        <span class="badge badge-primary">主要</span>
-        <span class="badge badge-secondary">次要</span>
-        <span class="badge badge-success">成功</span>
-        <span class="badge badge-danger">危险</span>
-        <span class="badge badge-warning">警告</span>
-        <span class="badge badge-info">信息</span>
-        <span class="badge badge-light">浅色</span>
-        <span class="badge badge-dark">深色</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        徽章插入到元素内
-      </div>
-      <div class="card-body">
-        <button type="button" class="btn btn-primary">
-          Messages <span class="badge badge-light">4</span>
-        </button>
-        <button type="button" class="btn btn-primary">
-          Messages <span class="badge badge-warning">4</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div id="container-progress" class="container">
-    <h1>进度条</h1>
-    <div class="card">
-      <div class="card-body">
-        <div class="progress">
-          <div class="progress-bar" style="width:20%"></div>
-        </div>
-        <br>
-        <div class="progress">
-          <div class="progress-bar" style="width:50%"></div>
-        </div>
-        <br>
-        <div class="progress">
-          <div class="progress-bar" style="width:70%"></div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        进度条高度
-      </div>
-      <div class="card-body">
-        <div class="progress" style="height:20px;">
-          <div class="progress-bar" style="width:40%;">height:20px</div>
-        </div>
-        <br>
-        <div class="progress" style="height:30px;">
-          <div class="progress-bar" style="width:40%;">height:30px</div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        进度条标签
-      </div>
-      <div class="card-body">
-        <div class="progress">
-          <div class="progress-bar" style="width:70%">70%</div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        不同颜色的进度条
-      </div>
-      <div class="card-body">
-        <div class="progress">
-          <div class="progress-bar bg-success" style="width:40%">bg-success</div>
-        </div>
-        <br>
-        <div class="progress">
-          <div class="progress-bar bg-info" style="width:50%">bg-info</div>
-        </div>
-        <br>
-        <div class="progress">
-          <div class="progress-bar bg-warning" style="width:60%">bg-warning</div>
-        </div>
-        <br>
-        <div class="progress">
-          <div class="progress-bar bg-danger" style="width:70%">bg-danger</div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        条纹的进度条
-      </div>
-      <div class="card-body">
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped" style="width:40%"></div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        动画进度条
-      </div>
-      <div class="card-body">
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%"></div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        混合色彩进度条
-      </div>
-      <div class="card-body">
-        <div class="progress">
-          <div class="progress-bar bg-success" style="width:40%">
-            Free Space
-          </div>
-          <div class="progress-bar bg-warning" style="width:10%">
-            Warning
-          </div>
-          <div class="progress-bar bg-danger" style="width:20%">
-            Danger
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="container-pager" class="container">
-    <h1>分页</h1>
-    <div class="card">
-      <div class="card-body">
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  <div id="main-content" class="container-fluid">
+    <div class="row">
+      <div id="sidebar" class="d-none d-lg-block col-2">
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="#container-alert">信息提示框</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-btns">按钮</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-btn-group">按钮组</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-badges">徽章</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-progress">进度条</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-pager">分页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-list-group">列表组</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-card">卡片</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-collapse">折叠</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-nav">导航</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-form">表单</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-form-control">表单控件</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-input-group">输入框组</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-custom-form">自定义表单控件</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-carousel">轮播</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-modal">模态框</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-pop">弹出框</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-tool">Bootstrap4 小工具</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#container-flexlayout">Bootstrap 4 Flex（弹性）布局</a>
+          </li>
         </ul>
       </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        当前页页码状态
-      </div>
-      <div class="card-body">
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item active"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        不可点击的分页链接
-      </div>
-      <div class="card-body">
-        <ul class="pagination">
-          <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        分页显示大小
-      </div>
-      <div class="card-body">
-        <ul class="pagination pagination-lg">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-
-        <ul class="pagination pagination-sm">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        面包屑导航
-      </div>
-      <div class="card-body">
-        <ul class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">Photos</a></li>
-          <li class="breadcrumb-item"><a href="#">Summer 2017</a></li>
-          <li class="breadcrumb-item"><a href="#">Italy</a></li>
-          <li class="breadcrumb-item active">Rome</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div id="container-list-group" class="container">
-    <h1>列表组</h1>
-    <div class="card">
-      <div class="card-body">
-        <ul class="list-group">
-          <li class="list-group-item">普通的列表项</li>
-          <li class="list-group-item active">激活的项</li>
-          <li class="list-group-item disabled">禁用的项</li>
-          <a href="#" class="list-group-item list-group-item-action">链接列表项</a>
-          <li class="list-group-item list-group-item-success">成功列表项</li>
-          <li class="list-group-item list-group-item-secondary">次要列表项</li>
-          <li class="list-group-item list-group-item-info">信息列表项</li>
-          <li class="list-group-item list-group-item-warning">警告列表项</li>
-          <li class="list-group-item list-group-item-danger">危险列表项</li>
-          <li class="list-group-item list-group-item-primary">主要列表项</li>
-          <li class="list-group-item list-group-item-dark">深灰色列表项</li>
-          <li class="list-group-item list-group-item-light">浅色列表项</li>
-          <a href="#" class="list-group-item list-group-item-action">链接的激活列表项</a>
-          <a href="#" class="list-group-item list-group-item-success">链接的成功列表项</a>
-          <a href="#" class="list-group-item list-group-item-secondary">链接的次要列表项</a>
-          <a href="#" class="list-group-item list-group-item-info">链接的信息列表项</a>
-          <a href="#" class="list-group-item list-group-item-warning">链接的警告列表项</a>
-          <a href="#" class="list-group-item list-group-item-danger">链接的危险列表项</a>
-          <a href="#" class="list-group-item list-group-item-primary">链接的主要列表项</a>
-          <a href="#" class="list-group-item list-group-item-dark">链接的深灰色列表项</a>
-          <a href="#" class="list-group-item list-group-item-light">链接的浅色列表项</a>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div id="" class="container">
-    <h1>卡片</h1>
-    <div class="card">
-      <div class="card-body">
-        <div class="card-header">
-          Card header
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some example text. Some example text.</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+      <div id="content" class="offset-2">
+        <div id="container-alert" class="container">
+          <h1>信息提示框</h1>
+          <hr>
+          <div class="alert alert-success alert-dismissible fade show">
+            信息提示框 成功 alert-success <a href="#" class="alert-link">这是信息提示框链接</a>
+            <button class="close" data-dismiss="alert">&times;</button>
           </div>
-          <div class="card-footer">
-            Card footer
+          <div class="alert alert-info alert-dismissible fade show">
+            信息提示框 信息 alert-info <a href="#" class="alert-link">这是信息提示框链接</a>
+            <button class="close" data-dismiss="alert">&times;</button>
+          </div>
+          <div class="alert alert-warning alert-dismissible fade show">
+            信息提示框 警告 alert-warning <a href="#" class="alert-link">这是信息提示框链接</a>
+            <button class="close" data-dismiss="alert">&times;</button>
+          </div>
+          <div class="alert alert-danger alert-dismissible fade show">
+            信息提示框 错误 alert-danger <a href="#" class="alert-link">这是信息提示框链接</a>
+            <button class="close" data-dismiss="alert">&times;</button>
+          </div>
+          <div class="alert alert-primary alert-dismissible fade show">
+            信息提示框 首选 alert-primary <a href="#" class="alert-link">这是信息提示框链接</a>
+            <button class="close" data-dismiss="alert">&times;</button>
+          </div>
+          <div class="alert alert-secondary alert-dismissible fade show">
+            信息提示框 次要 alert-secondary <a href="#" class="alert-link">这是信息提示框链接</a>
+            <button class="close" data-dismiss="alert">&times;</button>
+          </div>
+          <div class="alert alert-dark alert-dismissible fade show">
+            信息提示框 深灰色 alert-dark <a href="#" class="alert-link">这是信息提示框链接</a>
+            <button class="close" data-dismiss="alert">&times;</button>
+          </div>
+          <div class="alert alert-light alert-dismissible fade show">
+            信息提示框 浅灰色 alert-light <a href="#" class="alert-link">这是信息提示框链接</a>
+            <button class="close" data-dismiss="alert">&times;</button>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        多种颜色的卡片
-      </div>
-      <div class="card-body">
-        <div class="row">
-          <div class="card custom-card">
-            <div class="card-body">Basic card</div>
-          </div>
-          <br>
-          <div class="card bg-primary text-white custom-card">
-            <div class="card-body">Primary card</div>
-          </div>
-          <br>
-          <div class="card bg-success text-white custom-card">
-            <div class="card-body">Success card</div>
-          </div>
-          <br>
-          <div class="card bg-info text-white custom-card">
-            <div class="card-body">Info card</div>
-          </div>
-          <br>
-          <div class="card bg-warning text-white custom-card">
-            <div class="card-body">Warning card</div>
-          </div>
-          <br>
-          <div class="card bg-danger text-white custom-card">
-            <div class="card-body">Danger card</div>
-          </div>
-          <br>
-          <div class="card bg-secondary text-white custom-card">
-            <div class="card-body">Secondary card</div>
-          </div>
-          <br>
-          <div class="card bg-dark text-white custom-card">
-            <div class="card-body">Dark card</div>
-          </div>
-          <br>
-          <div class="card bg-light text-dark custom-card">
-            <div class="card-body">Light card</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-
-      </div>
-      <div class="card-body">
-
-      </div>
-    </div>
-  </div>
-
-  <div id="container-card" class="container">
-    <h1>下拉菜单</h1>
-    <div class="card">
-      <div class="card-body">
-        <div class="dropdown">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-            Dropdown button
-          </button>
-          <div class="dropdown-menu">
-            <h5 class="dropdown-header">Dropdown header 1</h5>
-            <a class="dropdown-item" href="#">Link 1</a>
-            <a class="dropdown-item" href="#">Link 2</a>
-            <h5 class="dropdown-header">Dropdown header 2</h5>
-            <a class="dropdown-item" href="#">Link 3</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Link 4</a>
-            <a class="dropdown-item active" href="#">可用项</a>
-            <a class="dropdown-item disabled" href="#">禁用项</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        下拉菜单的定位
-      </div>
-      <div class="card-body">
-        <div class="row">
-          <div class="dropdown custom-dropdown">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-              Dropdown button right
-            </button>
-            <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="#">Link 1</a>
-              <a class="dropdown-item" href="#">Link 2</a>
-              <a class="dropdown-item" href="#">Link 3</a>
-              <a class="dropdown-item" href="#">Link 4</a>
-            </div>
-          </div>
-          <div class="dropdown custom-dropdown">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-              Dropdown button left
-            </button>
-            <div class="dropdown-menu dropdown-menu-left">
-              <a class="dropdown-item" href="#">Link 1</a>
-              <a class="dropdown-item" href="#">Link 2</a>
-              <a class="dropdown-item" href="#">Link 3</a>
-              <a class="dropdown-item" href="#">Link 4</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        下拉菜单弹出方向设置
-      </div>
-      <div class="card-body">
-        <div class="btn-group dropright">
-          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Dropright
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Link 1</a>
-            <a class="dropdown-item" href="#">Link 2</a>
-            <a class="dropdown-item" href="#">Link 3</a>
-            <a class="dropdown-item" href="#">Link 4</a>
-          </div>
-        </div>
-        <div class="btn-group dropright">
-          <button type="button" class="btn btn-secondary">
-            Split dropright
-          </button>
-          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <span class="sr-only">Toggle Dropright</span>
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Link 1</a>
-            <a class="dropdown-item" href="#">Link 2</a>
-            <a class="dropdown-item" href="#">Link 3</a>
-            <a class="dropdown-item" href="#">Link 4</a>
-          </div>
-        </div>
-        <div class="btn-group dropup">
-          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Dropup
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Link 1</a>
-            <a class="dropdown-item" href="#">Link 2</a>
-            <a class="dropdown-item" href="#">Link 3</a>
-            <a class="dropdown-item" href="#">Link 4</a>
-          </div>
-        </div>
-
-        <div class="btn-group dropup">
-          <button type="button" class="btn btn-secondary">
-            Split dropup
-          </button>
-          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <span class="sr-only">Toggle Dropdown</span>
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Link 1</a>
-            <a class="dropdown-item" href="#">Link 2</a>
-            <a class="dropdown-item" href="#">Link 3</a>
-            <a class="dropdown-item" href="#">Link 4</a>
-          </div>
-        </div>
-
-        <div class="btn-group dropleft">
-          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Dropleft
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Link 1</a>
-            <a class="dropdown-item" href="#">Link 2</a>
-            <a class="dropdown-item" href="#">Link 3</a>
-            <a class="dropdown-item" href="#">Link 4</a>
-          </div>
-        </div>
-
-        <div class="btn-group">
-          <div class="btn-group dropleft" role="group">
-            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              <span class="sr-only">Toggle Dropleft</span>
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Link 1</a>
-              <a class="dropdown-item" href="#">Link 2</a>
-              <a class="dropdown-item" href="#">Link 3</a>
-              <a class="dropdown-item" href="#">Link 4</a>
-            </div>
-          </div>
-          <button type="button" class="btn btn-secondary">
-            Split dropleft
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        按钮中设置下拉菜单
-      </div>
-      <div class="card-body">
-        <div class="btn-group">
-          <button type="button" class="btn btn-primary">Sony</button>
-          <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
-            <span class="caret"></span>
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Tablet</a>
-            <a class="dropdown-item" href="#">Smartphone</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="container-collapse" class="container">
-    <h1>折叠</h1>
-    <div class="card">
-      <div class="card-body">
-        <a href="#demo" class="btn btn-primary" data-toggle="collapse">Collapsible</a>
-
-        <div id="demo" class="collapse">
-          Lorem ipsum dolor text....
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        手风琴效果
-      </div>
-      <div class="card-body">
-        <div id="accordion">
+        <div id="container-btns" class="container">
+          <h1>按钮</h1>
           <div class="card">
             <div class="card-header">
-              <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                选项一
-              </a>
+              基本按钮
             </div>
-            <div id="collapseOne" class="collapse show" data-parent="#accordion">
-              <div class="card-body">
-                #1 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+            <div class="card-body">
+              <button type="button" class="btn">基本按钮</button>
+              <button type="button" class="btn btn-primary">主要按钮</button>
+              <button type="button" class="btn btn-secondary">次要按钮</button>
+              <button type="button" class="btn btn-success">成功</button>
+              <button type="button" class="btn btn-info">信息</button>
+              <button type="button" class="btn btn-warning">警告</button>
+              <button type="button" class="btn btn-danger">危险</button>
+              <button type="button" class="btn btn-dark">黑色</button>
+              <button type="button" class="btn btn-light">浅色</button>
+              <button type="button" class="btn btn-link">链接</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              按钮设置边框
+            </div>
+            <div class="card-body">
+              <button type="button" class="btn btn-outline-primary">主要按钮</button>
+              <button type="button" class="btn btn-outline-secondary">次要按钮</button>
+              <button type="button" class="btn btn-outline-success">成功</button>
+              <button type="button" class="btn btn-outline-info">信息</button>
+              <button type="button" class="btn btn-outline-warning">警告</button>
+              <button type="button" class="btn btn-outline-danger">危险</button>
+              <button type="button" class="btn btn-outline-dark">黑色</button>
+              <button type="button" class="btn btn-outline-light text-dark">浅色</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              不同大小的按钮
+            </div>
+            <div class="card-body">
+              <button type="button" class="btn btn-primary btn-lg">大号按钮</button>
+              <button type="button" class="btn btn-primary">默认按钮</button>
+              <button type="button" class="btn btn-primary btn-sm">小号按钮</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              块级按钮
+            </div>
+            <div class="card-body">
+              <button type="button" class="btn btn-block btn-primary">主要按钮</button>
+              <button type="button" class="btn btn-block btn-secondary">次要按钮</button>
+              <button type="button" class="btn btn-block btn-success">成功</button>
+              <button type="button" class="btn btn-block btn-info">信息</button>
+              <button type="button" class="btn btn-block btn-warning">警告</button>
+              <button type="button" class="btn btn-block btn-danger">危险</button>
+              <button type="button" class="btn btn-block btn-dark">黑色</button>
+              <button type="button" class="btn btn-block btn-light">浅色</button>
+              <button type="button" class="btn btn-block btn-link">链接</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              激活和禁用的按钮
+            </div>
+            <div class="card-body">
+              <button type="button" class="btn btn-primary active">点击后的按钮</button>
+              <button type="button" class="btn btn-primary" disabled>禁止点击的按钮</button>
+              <a href="#" class="btn btn-primary disabled">禁止点击的链接</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="container-btn-group" class="container">
+          <h1>按钮组</h1>
+          <div class="card">
+            <div class="card-body">
+              <div class="btn-group btn-group-lg">
+                <button type="button" class="btn btn-primary">Apple</button>
+                <button type="button" class="btn btn-primary">Samsung</button>
+                <button type="button" class="btn btn-primary">Sony</button>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary">Apple</button>
+                <button type="button" class="btn btn-primary">Samsung</button>
+                <button type="button" class="btn btn-primary">Sony</button>
+              </div>
+              <div class="btn-group btn-group-sm">
+                <button type="button" class="btn btn-primary">Apple</button>
+                <button type="button" class="btn btn-primary">Samsung</button>
+                <button type="button" class="btn btn-primary">Sony</button>
               </div>
             </div>
           </div>
           <div class="card">
             <div class="card-header">
-              <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-                选项二
-              </a>
+              垂直按钮组
             </div>
-            <div id="collapseTwo" class="collapse" data-parent="#accordion">
-              <div class="card-body">
-                #2 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！
-                <p>
-
-                  #2 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！-2
-                </p>
-                <p>
-
-                  #2 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！-3
-                </p>
+            <div class="card-body">
+              <div class="btn-group-vertical">
+                <button type="button" class="btn btn-primary">Apple</button>
+                <button type="button" class="btn btn-primary">Samsung</button>
+                <button type="button" class="btn btn-primary">Sony</button>
               </div>
             </div>
           </div>
           <div class="card">
             <div class="card-header">
-              <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-                选项三
-              </a>
+              内嵌按钮组及下拉菜单
             </div>
-            <div id="collapseThree" class="collapse" data-parent="#accordion">
-              <div class="card-body">
-                #3 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+            <div class="card-body">
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary">Apple</button>
+                <button type="button" class="btn btn-primary">Samsung</button>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Sony
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Tablet</a>
+                    <a class="dropdown-item" href="#">Smartphone</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              拆分按钮下拉菜单
+            </div>
+            <div class="card-body">
+              <div class="btn-group-vertical">
+                <button type="button" class="btn btn-primary">Apple</button>
+                <button type="button" class="btn btn-primary">Samsung</button>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Sony
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Tablet</a>
+                    <a class="dropdown-item" href="#">Smartphone</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div id="container-nav" class="container">
-    <h1>导航</h1>
-    <div class="card">
-      <div class="card-body">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-        <ul class="nav justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-        <ul class="nav justify-content-end">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        垂直导航
-      </div>
-      <div class="card-body">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        胶囊导航
-      </div>
-      <div class="card-body">
-        <ul class="nav nav-pills">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        导航等宽
-      </div>
-      <div class="card-body">
-        <ul class="nav nav-pills nav-justified">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-        <br>
-        <ul class="nav nav-tabs nav-justified">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        动态选项卡 / 选项卡下拉菜单
-      </div>
-      <div class="card-body">
-        <ul class="nav nav-pills">
-          <li class="nav-item">
-            <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#menu1">Menu 1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#menu2">Menu 2</a>
-          </li>
-        </ul>
-        <br>
-        <ul class="nav nav-tabs">
-          <li class="nav-item">
-            <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#menu1">Menu 1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#menu2">Menu 2</a>
-          </li>
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content">
-          <div class="tab-pane active container" id="home">
-            Home
-          </div>
-          <div class="tab-pane container" id="menu1">
-            Menu 1
-          </div>
-          <div class="tab-pane container" id="menu2">
-            Menu 2
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="container-form" class="container">
-    <h1>表单</h1>
-    <div class="card">
-      <div class="card-header">
-        堆叠表单
-      </div>
-      <div class="card-body">
-        <form>
-          <div class="form-group">
-            <label for="email">Email address:</label>
-            <input type="email" class="form-control" id="email">
-          </div>
-          <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd">
-          </div>
-          <div class="form-check">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox"> Remember me
-            </label>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        内联表单
-      </div>
-      <div class="card-body">
-        <form class="form-inline">
-          <label for="email">Email address:</label>
-          <input type="email" class="form-control" id="email">
-          <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="pwd">
-          <div class="form-check">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox"> Remember me
-            </label>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div id="container-form-control" class="container">
-    <h1>表单控件</h1>
-    <div class="card">
-      <div class="card-header">
-        Bootstrap Input
-      </div>
-      <div class="card-body">
-        <form></form>
-        <div class="form-group">
-          <label for="">textbox</label>
-          <input type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="">password</label>
-          <input type="password" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="">datetime</label>
-          <input type="datetime" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="">datetime-local</label>
-          <input type="datetime-local" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="">date</label>
-          <input type="date" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="">month</label>
-          <input type="month" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="">time</label>
-          <input type="time" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="">week</label>
-          <input type="week" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="">number</label>
-          <input type="number" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="">email</label>
-          <input type="email" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="">url</label>
-          <input type="url" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="">search</label>
-          <input type="search" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="">tel</label>
-          <input type="tel" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="">color</label>
-          <input type="color" class="form-control">
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        Bootstrap textarea
-      </div>
-      <div class="card-body">
-        <div class="form-group">
-          <label for="comment">评论:</label>
-          <textarea class="form-control" rows="5" id="comment"></textarea>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        Bootstrap 复选框(checkbox)
-      </div>
-      <div class="card-body">
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="">Option 1
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="">Option 2
-          </label>
-        </div>
-        <div class="form-check disabled">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="" disabled>Option 3
-          </label>
-        </div>
-        <hr>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="">Option 1
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="">Option 2
-          </label>
-        </div>
-        <div class="form-check form-check-inline disabled">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="" disabled>Option 3
-          </label>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        Bootstrap 单选框(Radio)
-      </div>
-      <div class="card-body">
-        <div class="radio">
-          <label><input type="radio" name="optradio"> Option 1</label>
-        </div>
-        <div class="radio">
-          <label><input type="radio" name="optradio"> Option 2</label>
-        </div>
-        <div class="radio disabled">
-          <label><input type="radio" name="optradio" disabled> Option 3</label>
-        </div>
-        <hr>
-        <label class="radio-inline"><input type="radio" name="optradio"> Option 1</label>
-        <label class="radio-inline"><input type="radio" name="optradio"> Option 2</label>
-        <label class="radio-inline"><input type="radio" name="optradio" disabled> Option 3</label>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        Bootstrap select 下拉菜单
-      </div>
-      <div class="card-body">
-        <div class="form-group">
-          <label for="sel1">下拉菜单:</label>
-          <select class="form-control" id="sel1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div id="container-input-group" class="container">
-    <h1>输入框组</h1>
-    <div class="card">
-      <div class="card-body">
-        <form>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text">@</span>
-            </div>
-            <input type="text" class="form-control" placeholder="Username">
-          </div>
-          <div class="input-group mb-3 input-group-sm">
-            <div class="input-group-prepend">
-              <span class="input-group-text">@</span>
-            </div>
-            <input type="text" class="form-control" placeholder="Username">
-          </div>
-
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Your Email">
-            <div class="input-group-append">
-              <span class="input-group-text">@runoob.com</span>
+        <div id="container-badges" class="container">
+          <h1>徽章</h1>
+          <div class="card">
+            <div class="card-body">
+              <h1>测试标题 <span class="badge badge-secondary">New</span></h1>
+              <h2>测试标题 <span class="badge badge-secondary">New</span></h2>
+              <h3>测试标题 <span class="badge badge-secondary">New</span></h3>
+              <h4>测试标题 <span class="badge badge-secondary">New</span></h4>
+              <h5>测试标题 <span class="badge badge-secondary">New</span></h5>
+              <h6>测试标题 <span class="badge badge-secondary">New</span></h6>
             </div>
           </div>
-          <div class="input-group mb-3 input-group-sm">
-            <input type="text" class="form-control" placeholder="Your Email">
-            <div class="input-group-append">
-              <span class="input-group-text">@runoob.com</span>
+          <div class="card">
+            <div class="card-header">
+              各种颜色类型的徽章
+            </div>
+            <div class="card-body">
+              <span class="badge badge-primary">主要</span>
+              <span class="badge badge-secondary">次要</span>
+              <span class="badge badge-success">成功</span>
+              <span class="badge badge-danger">危险</span>
+              <span class="badge badge-warning">警告</span>
+              <span class="badge badge-info">信息</span>
+              <span class="badge badge-light">浅色</span>
+              <span class="badge badge-dark">深色</span>
             </div>
           </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text">One</span>
-              <span class="input-group-text">Two</span>
-              <span class="input-group-text">Three</span>
+          <div class="card">
+            <div class="card-header">
+              徽章插入到元素内
             </div>
-            <input type="text" class="form-control">
-          </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Person</span>
-            </div>
-            <input type="text" class="form-control" placeholder="First Name">
-            <input type="text" class="form-control" placeholder="Last Name">
-          </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <div class="input-group-text">
-                <input type="checkbox">
-              </div>
-            </div>
-            <input type="text" class="form-control" placeholder="RUNOOB">
-          </div>
-
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <div class="input-group-text">
-                <input type="radio">
-              </div>
-            </div>
-            <input type="text" class="form-control" placeholder="GOOGLE">
-          </div>
-
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <button class="btn btn-outline-secondary" type="button">Basic Button</button>
-            </div>
-            <input type="text" class="form-control" placeholder="Some text">
-          </div>
-
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Search">
-            <div class="input-group-append">
-              <button class="btn btn-success" type="submit">Go</button>
-            </div>
-          </div>
-
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Something clever..">
-            <div class="input-group-append">
-              <button class="btn btn-primary" type="button">OK</button>
-              <button class="btn btn-danger" type="button">Cancel</button>
-            </div>
-          </div>
-          <div class="input-group mt-3 mb-3">
-            <div class="input-group-prepend">
-              <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
-                选择网站
+            <div class="card-body">
+              <button type="button" class="btn btn-primary">
+                Messages <span class="badge badge-light">4</span>
               </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="https://www.google.com">GOOGLE</a>
-                <a class="dropdown-item" href="https://www.runoob.com">RUNOOB</a>
-                <a class="dropdown-item" href="https://www.taobao.com">TAOBAO</a>
-              </div>
-            </div>
-            <input type="text" class="form-control" placeholder="网站地址">
-          </div>
-          <label for="inputgroupdemo">这里输入您的邮箱:<-点击这里会聚焦到下方输入框</label> <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Email" id="inputgroupdemo" name="email">
-              <div class="input-group-append">
-                <span class="input-group-text">@runoob.com</span>
-              </div>
-      </div>
-      </form>
-    </div>
-  </div>
-  </div>
-
-  <div id="container-custom-form" class="container">
-    <h1>自定义表单控件</h1>
-    <div class="card">
-      <div class="card-header">
-        自定义复选框 / 单选框
-      </div>
-      <div class="card-body">
-        <form>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
-            <label class="custom-control-label" for="customCheck">自定义复选框</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input" id="customRadio" name="example1" value="customEx">
-            <label class="custom-control-label" for="customRadio">自定义单选框</label>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        自定义控件显示在同一行
-      </div>
-      <div class="card-body">
-        <form>
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" class="custom-control-input" id="customRadio" name="example" value="customEx">
-            <label class="custom-control-label" for="customRadio">自定义单选框 1</label>
-          </div>
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" class="custom-control-input" id="customRadio2" name="example" value="customEx">
-            <label class="custom-control-label" for="customRadio2">自定义单选框 2</label>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        自定义选择菜单
-      </div>
-      <div class="card-body">
-        <form>
-          <select name="cars" class="custom-select-sm">
-            <option selected>比较小的自定义选择菜单</option>
-            <option value="Google">Google</option>
-            <option value="Runoob">Runoob</option>
-            <option value="Taobao">Taobao</option>
-          </select>
-
-          <select name="cars" class="custom-select-sm">
-            <option selected>自定义选择菜单</option>
-            <option value="Google">Google</option>
-            <option value="Runoob">Runoob</option>
-            <option value="Taobao">Taobao</option>
-          </select>
-
-          <!-- 大 -->
-          <select name="cars" class="custom-select-lg">
-            <option selected>比较大的自定义选择菜单</option>
-            <option value="Google">Google</option>
-            <option value="Runoob">Runoob</option>
-            <option value="Taobao">Taobao</option>
-          </select>
-        </form>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        自定义滑块控件
-      </div>
-      <div class="card-body">
-        <form>
-          <label for="customRange">自定义滑块控件</label>
-          <input type="range" class="custom-range" id="customRange" name="points1">
-          <label for="defaultRange">默认滑块控件</label>
-          <input type="range" id="defaultRange" name="points2">
-        </form>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        自定义文件上传控件
-      </div>
-      <div class="card-body">
-        <form>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFile">
-            <label class="custom-file-label" for="customFile">选择文件</label>
-          </div>
-
-          <p>默认上传文件样式:</p>
-          <input type="file" id="myFile" name="filename2">
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div id="container-carousel" class="container">
-    <h1>轮播</h1>
-    <div class="card">
-      <div class="card-body">
-        <div id="carouseldemo" class="carousel slide" data-ride="carousel">
-
-          <!-- 指示符 -->
-          <ul class="carousel-indicators">
-            <li data-target="#carouseldemo" data-slide-to="0" class="active"></li>
-            <li data-target="#carouseldemo" data-slide-to="1"></li>
-            <li data-target="#carouseldemo" data-slide-to="2"></li>
-          </ul>
-
-          <!-- 轮播图片 -->
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
-              <div class="carousel-caption">
-                <h3>第一张图片描述标题</h3>
-                <p>描述文字!</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
-              <div class="carousel-caption">
-                <h3>第二张图片描述标题</h3>
-                <p>描述文字!</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
-              <div class="carousel-caption">
-                <h3>第三张图片描述标题</h3>
-                <p>描述文字!</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 左右切换按钮 -->
-          <a class="carousel-control-prev" href="#carouseldemo" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </a>
-          <a class="carousel-control-next" href="#carouseldemo" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </a>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="container-modal" class="container">
-    <div class="card">
-      <div class="card-header">
-
-      </div>
-      <div class="card-body">
-        <!-- 按钮：用于打开模态框 -->
-        <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#myModallg">
-          打开模态框(lg)
-        </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-          打开模态框
-        </button>
-        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModalsm">
-          打开模态框(sm)
-        </button>
-        <!-- 模态框 -->
-        <div class="modal fade" id="myModallg">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-
-              <!-- 模态框头部 -->
-              <div class="modal-header">
-                <h4 class="modal-title">模态框头部</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-
-              <!-- 模态框主体 -->
-              <div class="modal-body">
-                模态框内容..
-              </div>
-
-              <!-- 模态框底部 -->
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-              </div>
-
+              <button type="button" class="btn btn-primary">
+                Messages <span class="badge badge-warning">4</span>
+              </button>
             </div>
           </div>
         </div>
-        <div class="modal fade" id="myModal">
-          <div class="modal-dialog">
-            <div class="modal-content">
 
-              <!-- 模态框头部 -->
-              <div class="modal-header">
-                <h4 class="modal-title">模态框头部</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div id="container-progress" class="container">
+          <h1>进度条</h1>
+          <div class="card">
+            <div class="card-body">
+              <div class="progress">
+                <div class="progress-bar" style="width:20%"></div>
               </div>
+              <br>
+              <div class="progress">
+                <div class="progress-bar" style="width:50%"></div>
+              </div>
+              <br>
+              <div class="progress">
+                <div class="progress-bar" style="width:70%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              进度条高度
+            </div>
+            <div class="card-body">
+              <div class="progress" style="height:20px;">
+                <div class="progress-bar" style="width:40%;">height:20px</div>
+              </div>
+              <br>
+              <div class="progress" style="height:30px;">
+                <div class="progress-bar" style="width:40%;">height:30px</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              进度条标签
+            </div>
+            <div class="card-body">
+              <div class="progress">
+                <div class="progress-bar" style="width:70%">70%</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              不同颜色的进度条
+            </div>
+            <div class="card-body">
+              <div class="progress">
+                <div class="progress-bar bg-success" style="width:40%">bg-success</div>
+              </div>
+              <br>
+              <div class="progress">
+                <div class="progress-bar bg-info" style="width:50%">bg-info</div>
+              </div>
+              <br>
+              <div class="progress">
+                <div class="progress-bar bg-warning" style="width:60%">bg-warning</div>
+              </div>
+              <br>
+              <div class="progress">
+                <div class="progress-bar bg-danger" style="width:70%">bg-danger</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              条纹的进度条
+            </div>
+            <div class="card-body">
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped" style="width:40%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              动画进度条
+            </div>
+            <div class="card-body">
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              混合色彩进度条
+            </div>
+            <div class="card-body">
+              <div class="progress">
+                <div class="progress-bar bg-success" style="width:40%">
+                  Free Space
+                </div>
+                <div class="progress-bar bg-warning" style="width:10%">
+                  Warning
+                </div>
+                <div class="progress-bar bg-danger" style="width:20%">
+                  Danger
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-              <!-- 模态框主体 -->
-              <div class="modal-body">
-                模态框内容..
-              </div>
+        <div id="container-pager" class="container">
+          <h1>分页</h1>
+          <div class="card">
+            <div class="card-body">
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              当前页页码状态
+            </div>
+            <div class="card-body">
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              不可点击的分页链接
+            </div>
+            <div class="card-body">
+              <ul class="pagination">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              分页显示大小
+            </div>
+            <div class="card-body">
+              <ul class="pagination pagination-lg">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
 
-              <!-- 模态框底部 -->
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+              <ul class="pagination pagination-sm">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              面包屑导航
+            </div>
+            <div class="card-body">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Photos</a></li>
+                <li class="breadcrumb-item"><a href="#">Summer 2017</a></li>
+                <li class="breadcrumb-item"><a href="#">Italy</a></li>
+                <li class="breadcrumb-item active">Rome</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="container-list-group" class="container">
+          <h1>列表组</h1>
+          <div class="card">
+            <div class="card-body">
+              <ul class="list-group">
+                <li class="list-group-item">普通的列表项</li>
+                <li class="list-group-item active">激活的项</li>
+                <li class="list-group-item disabled">禁用的项</li>
+                <a href="#" class="list-group-item list-group-item-action">链接列表项</a>
+                <li class="list-group-item list-group-item-success">成功列表项</li>
+                <li class="list-group-item list-group-item-secondary">次要列表项</li>
+                <li class="list-group-item list-group-item-info">信息列表项</li>
+                <li class="list-group-item list-group-item-warning">警告列表项</li>
+                <li class="list-group-item list-group-item-danger">危险列表项</li>
+                <li class="list-group-item list-group-item-primary">主要列表项</li>
+                <li class="list-group-item list-group-item-dark">深灰色列表项</li>
+                <li class="list-group-item list-group-item-light">浅色列表项</li>
+                <a href="#" class="list-group-item list-group-item-action">链接的激活列表项</a>
+                <a href="#" class="list-group-item list-group-item-success">链接的成功列表项</a>
+                <a href="#" class="list-group-item list-group-item-secondary">链接的次要列表项</a>
+                <a href="#" class="list-group-item list-group-item-info">链接的信息列表项</a>
+                <a href="#" class="list-group-item list-group-item-warning">链接的警告列表项</a>
+                <a href="#" class="list-group-item list-group-item-danger">链接的危险列表项</a>
+                <a href="#" class="list-group-item list-group-item-primary">链接的主要列表项</a>
+                <a href="#" class="list-group-item list-group-item-dark">链接的深灰色列表项</a>
+                <a href="#" class="list-group-item list-group-item-light">链接的浅色列表项</a>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="container-card" class="container">
+          <h1>卡片</h1>
+          <div class="card">
+            <div class="card-body">
+              <div class="card-header">
+                Card header
               </div>
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">Some example text. Some example text.</p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+                <div class="card-footer">
+                  Card footer
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              多种颜色的卡片
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="card custom-card">
+                  <div class="card-body">Basic card</div>
+                </div>
+                <br>
+                <div class="card bg-primary text-white custom-card">
+                  <div class="card-body">Primary card</div>
+                </div>
+                <br>
+                <div class="card bg-success text-white custom-card">
+                  <div class="card-body">Success card</div>
+                </div>
+                <br>
+                <div class="card bg-info text-white custom-card">
+                  <div class="card-body">Info card</div>
+                </div>
+                <br>
+                <div class="card bg-warning text-white custom-card">
+                  <div class="card-body">Warning card</div>
+                </div>
+                <br>
+                <div class="card bg-danger text-white custom-card">
+                  <div class="card-body">Danger card</div>
+                </div>
+                <br>
+                <div class="card bg-secondary text-white custom-card">
+                  <div class="card-body">Secondary card</div>
+                </div>
+                <br>
+                <div class="card bg-dark text-white custom-card">
+                  <div class="card-body">Dark card</div>
+                </div>
+                <br>
+                <div class="card bg-light text-dark custom-card">
+                  <div class="card-body">Light card</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+
+            </div>
+            <div class="card-body">
 
             </div>
           </div>
         </div>
-        <div class="modal fade" id="myModalsm">
-          <div class="modal-dialog modal-sm">
-            <div class="modal-content">
 
-              <!-- 模态框头部 -->
-              <div class="modal-header">
-                <h4 class="modal-title">模态框头部</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div id="container-card" class="container">
+          <h1>下拉菜单</h1>
+          <div class="card">
+            <div class="card-body">
+              <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                  Dropdown button
+                </button>
+                <div class="dropdown-menu">
+                  <h5 class="dropdown-header">Dropdown header 1</h5>
+                  <a class="dropdown-item" href="#">Link 1</a>
+                  <a class="dropdown-item" href="#">Link 2</a>
+                  <h5 class="dropdown-header">Dropdown header 2</h5>
+                  <a class="dropdown-item" href="#">Link 3</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Link 4</a>
+                  <a class="dropdown-item active" href="#">可用项</a>
+                  <a class="dropdown-item disabled" href="#">禁用项</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              下拉菜单的定位
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="dropdown custom-dropdown">
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Dropdown button right
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                    <a class="dropdown-item" href="#">Link 4</a>
+                  </div>
+                </div>
+                <div class="dropdown custom-dropdown">
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Dropdown button left
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-left">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                    <a class="dropdown-item" href="#">Link 4</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              下拉菜单弹出方向设置
+            </div>
+            <div class="card-body">
+              <div class="btn-group dropright">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Dropright
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Link 1</a>
+                  <a class="dropdown-item" href="#">Link 2</a>
+                  <a class="dropdown-item" href="#">Link 3</a>
+                  <a class="dropdown-item" href="#">Link 4</a>
+                </div>
+              </div>
+              <div class="btn-group dropright">
+                <button type="button" class="btn btn-secondary">
+                  Split dropright
+                </button>
+                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropright</span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Link 1</a>
+                  <a class="dropdown-item" href="#">Link 2</a>
+                  <a class="dropdown-item" href="#">Link 3</a>
+                  <a class="dropdown-item" href="#">Link 4</a>
+                </div>
+              </div>
+              <div class="btn-group dropup">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Dropup
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Link 1</a>
+                  <a class="dropdown-item" href="#">Link 2</a>
+                  <a class="dropdown-item" href="#">Link 3</a>
+                  <a class="dropdown-item" href="#">Link 4</a>
+                </div>
               </div>
 
-              <!-- 模态框主体 -->
-              <div class="modal-body">
-                模态框内容..
+              <div class="btn-group dropup">
+                <button type="button" class="btn btn-secondary">
+                  Split dropup
+                </button>
+                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Link 1</a>
+                  <a class="dropdown-item" href="#">Link 2</a>
+                  <a class="dropdown-item" href="#">Link 3</a>
+                  <a class="dropdown-item" href="#">Link 4</a>
+                </div>
               </div>
 
-              <!-- 模态框底部 -->
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+              <div class="btn-group dropleft">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Dropleft
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Link 1</a>
+                  <a class="dropdown-item" href="#">Link 2</a>
+                  <a class="dropdown-item" href="#">Link 3</a>
+                  <a class="dropdown-item" href="#">Link 4</a>
+                </div>
               </div>
 
+              <div class="btn-group">
+                <div class="btn-group dropleft" role="group">
+                  <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropleft</span>
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                    <a class="dropdown-item" href="#">Link 4</a>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-secondary">
+                  Split dropleft
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              按钮中设置下拉菜单
+            </div>
+            <div class="card-body">
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary">Sony</button>
+                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                  data-toggle="dropdown">
+                  <span class="caret"></span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Tablet</a>
+                  <a class="dropdown-item" href="#">Smartphone</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+        <div id="container-collapse" class="container">
+          <h1>折叠</h1>
+          <div class="card">
+            <div class="card-body">
+              <a href="#demo" class="btn btn-primary" data-toggle="collapse">Collapsible</a>
+
+              <div id="demo" class="collapse">
+                Lorem ipsum dolor text....
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              手风琴效果
+            </div>
+            <div class="card-body">
+              <div id="accordion">
+                <div class="card">
+                  <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                      选项一
+                    </a>
+                  </div>
+                  <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                      #1 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                      选项二
+                    </a>
+                  </div>
+                  <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                      #2 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+                      <p>
+
+                        #2 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！-2
+                      </p>
+                      <p>
+
+                        #2 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！-3
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                      选项三
+                    </a>
+                  </div>
+                  <div id="collapseThree" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                      #3 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="container-nav" class="container">
+          <h1>导航</h1>
+          <div class="card">
+            <div class="card-body">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+              <ul class="nav justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+              <ul class="nav justify-content-end">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              垂直导航
+            </div>
+            <div class="card-body">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              胶囊导航
+            </div>
+            <div class="card-body">
+              <ul class="nav nav-pills">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              导航等宽
+            </div>
+            <div class="card-body">
+              <ul class="nav nav-pills nav-justified">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+              <br>
+              <ul class="nav nav-tabs nav-justified">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              动态选项卡 / 选项卡下拉菜单
+            </div>
+            <div class="card-body">
+              <ul class="nav nav-pills">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#menu1">Menu 1</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#menu2">Menu 2</a>
+                </li>
+              </ul>
+              <br>
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#menu1">Menu 1</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#menu2">Menu 2</a>
+                </li>
+              </ul>
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div class="tab-pane active container" id="home">
+                  Home
+                </div>
+                <div class="tab-pane container" id="menu1">
+                  Menu 1
+                </div>
+                <div class="tab-pane container" id="menu2">
+                  Menu 2
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="container-form" class="container">
+          <h1>表单</h1>
+          <div class="card">
+            <div class="card-header">
+              堆叠表单
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="form-group">
+                  <label for="email">Email address:</label>
+                  <input type="email" class="form-control" id="email2">
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Password:</label>
+                  <input type="password" class="form-control" id="pwd2">
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox"> Remember me
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              内联表单
+            </div>
+            <div class="card-body">
+              <form class="form-inline">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox"> Remember me
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div id="container-form-control" class="container">
+          <h1>表单控件</h1>
+          <div class="card">
+            <div class="card-header">
+              Bootstrap Input
+            </div>
+            <div class="card-body">
+              <form></form>
+              <div class="form-group">
+                <label for="">textbox</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">password</label>
+                <input type="password" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">datetime</label>
+                <input type="datetime" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">datetime-local</label>
+                <input type="datetime-local" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">date</label>
+                <input type="date" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">month</label>
+                <input type="month" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">time</label>
+                <input type="time" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">week</label>
+                <input type="week" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">number</label>
+                <input type="number" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">email</label>
+                <input type="email" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">url</label>
+                <input type="url" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">search</label>
+                <input type="search" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">tel</label>
+                <input type="tel" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">color</label>
+                <input type="color" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              Bootstrap textarea
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="comment">评论:</label>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              Bootstrap 复选框(checkbox)
+            </div>
+            <div class="card-body">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">Option 1
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">Option 2
+                </label>
+              </div>
+              <div class="form-check disabled">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="" disabled>Option 3
+                </label>
+              </div>
+              <hr>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">Option 1
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">Option 2
+                </label>
+              </div>
+              <div class="form-check form-check-inline disabled">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="" disabled>Option 3
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              Bootstrap 单选框(Radio)
+            </div>
+            <div class="card-body">
+              <div class="radio">
+                <label><input type="radio" name="optradio"> Option 1</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="optradio"> Option 2</label>
+              </div>
+              <div class="radio disabled">
+                <label><input type="radio" name="optradio" disabled> Option 3</label>
+              </div>
+              <hr>
+              <label class="radio-inline"><input type="radio" name="optradio"> Option 1</label>
+              <label class="radio-inline"><input type="radio" name="optradio"> Option 2</label>
+              <label class="radio-inline"><input type="radio" name="optradio" disabled> Option 3</label>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              Bootstrap select 下拉菜单
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="sel1">下拉菜单:</label>
+                <select class="form-control" id="sel1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="container-input-group" class="container">
+          <h1>输入框组</h1>
+          <div class="card">
+            <div class="card-body">
+              <form>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">@</span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Username">
+                </div>
+                <div class="input-group mb-3 input-group-sm">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">@</span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Username">
+                </div>
+
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Your Email">
+                  <div class="input-group-append">
+                    <span class="input-group-text">@runoob.com</span>
+                  </div>
+                </div>
+                <div class="input-group mb-3 input-group-sm">
+                  <input type="text" class="form-control" placeholder="Your Email">
+                  <div class="input-group-append">
+                    <span class="input-group-text">@runoob.com</span>
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">One</span>
+                    <span class="input-group-text">Two</span>
+                    <span class="input-group-text">Three</span>
+                  </div>
+                  <input type="text" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Person</span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="First Name">
+                  <input type="text" class="form-control" placeholder="Last Name">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <input type="checkbox">
+                    </div>
+                  </div>
+                  <input type="text" class="form-control" placeholder="RUNOOB">
+                </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <input type="radio">
+                    </div>
+                  </div>
+                  <input type="text" class="form-control" placeholder="GOOGLE">
+                </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button">Basic Button</button>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Some text">
+                </div>
+
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Search">
+                  <div class="input-group-append">
+                    <button class="btn btn-success" type="submit">Go</button>
+                  </div>
+                </div>
+
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Something clever..">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">OK</button>
+                    <button class="btn btn-danger" type="button">Cancel</button>
+                  </div>
+                </div>
+                <div class="input-group mt-3 mb-3">
+                  <div class="input-group-prepend">
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+                      选择网站
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="https://www.google.com">GOOGLE</a>
+                      <a class="dropdown-item" href="https://www.runoob.com">RUNOOB</a>
+                      <a class="dropdown-item" href="https://www.taobao.com">TAOBAO</a>
+                    </div>
+                  </div>
+                  <input type="text" class="form-control" placeholder="网站地址">
+                </div>
+                <label for="inputgroupdemo">这里输入您的邮箱:<-点击这里会聚焦到下方输入框< /label>
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" placeholder="Email" id="inputgroupdemo" name="email">
+                      <div class="input-group-append">
+                        <span class="input-group-text">@runoob.com</span>
+                      </div>
+                    </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div id="container-custom-form" class="container">
+          <h1>自定义表单控件</h1>
+          <div class="card">
+            <div class="card-header">
+              自定义复选框 / 单选框
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                  <label class="custom-control-label" for="customCheck">自定义复选框</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" id="customRadio1" name="example1" value="customEx">
+                  <label class="custom-control-label" for="customRadio">自定义单选框</label>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              自定义控件显示在同一行
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" class="custom-control-input" id="customRadio2" name="example" value="customEx">
+                  <label class="custom-control-label" for="customRadio">自定义单选框 1</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" class="custom-control-input" id="customRadio3" name="example" value="customEx">
+                  <label class="custom-control-label" for="customRadio2">自定义单选框 2</label>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              自定义选择菜单
+            </div>
+            <div class="card-body">
+              <form>
+                <select name="cars" class="custom-select-sm">
+                  <option selected>比较小的自定义选择菜单</option>
+                  <option value="Google">Google</option>
+                  <option value="Runoob">Runoob</option>
+                  <option value="Taobao">Taobao</option>
+                </select>
+
+                <select name="cars" class="custom-select-sm">
+                  <option selected>自定义选择菜单</option>
+                  <option value="Google">Google</option>
+                  <option value="Runoob">Runoob</option>
+                  <option value="Taobao">Taobao</option>
+                </select>
+
+                <!-- 大 -->
+                <select name="cars" class="custom-select-lg">
+                  <option selected>比较大的自定义选择菜单</option>
+                  <option value="Google">Google</option>
+                  <option value="Runoob">Runoob</option>
+                  <option value="Taobao">Taobao</option>
+                </select>
+              </form>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              自定义滑块控件
+            </div>
+            <div class="card-body">
+              <form>
+                <label for="customRange">自定义滑块控件</label>
+                <input type="range" class="custom-range" id="customRange" name="points1">
+                <label for="defaultRange">默认滑块控件</label>
+                <input type="range" id="defaultRange" name="points2">
+              </form>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              自定义文件上传控件
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="customFile">
+                  <label class="custom-file-label" for="customFile">选择文件</label>
+                </div>
+
+                <p>默认上传文件样式:</p>
+                <input type="file" id="myFile" name="filename2">
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div id="container-carousel" class="container">
+          <h1>轮播</h1>
+          <div class="card">
+            <div class="card-body">
+              <div id="carouseldemo" class="carousel slide" data-ride="carousel">
+
+                <!-- 指示符 -->
+                <ul class="carousel-indicators">
+                  <li data-target="#carouseldemo" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouseldemo" data-slide-to="1"></li>
+                  <li data-target="#carouseldemo" data-slide-to="2"></li>
+                </ul>
+
+                <!-- 轮播图片 -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
+                    <div class="carousel-caption">
+                      <h3>第一张图片描述标题</h3>
+                      <p>描述文字!</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
+                    <div class="carousel-caption">
+                      <h3>第二张图片描述标题</h3>
+                      <p>描述文字!</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
+                    <div class="carousel-caption">
+                      <h3>第三张图片描述标题</h3>
+                      <p>描述文字!</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 左右切换按钮 -->
+                <a class="carousel-control-prev" href="#carouseldemo" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#carouseldemo" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="container-modal" class="container">
+          <h1>模态框</h1>
+          <div class="card">
+            <div class="card-body">
+              <!-- 按钮：用于打开模态框 -->
+              <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#myModallg">
+                打开模态框(lg)
+              </button>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                打开模态框
+              </button>
+              <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModalsm">
+                打开模态框(sm)
+              </button>
+              <!-- 模态框 -->
+              <div class="modal fade" id="myModallg">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+
+                    <!-- 模态框头部 -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">模态框头部</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- 模态框主体 -->
+                    <div class="modal-body">
+                      模态框内容..
+                    </div>
+
+                    <!-- 模态框底部 -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+
+                    <!-- 模态框头部 -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">模态框头部</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- 模态框主体 -->
+                    <div class="modal-body">
+                      模态框内容..
+                    </div>
+
+                    <!-- 模态框底部 -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="myModalsm">
+                <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+
+                    <!-- 模态框头部 -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">模态框头部</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- 模态框主体 -->
+                    <div class="modal-body">
+                      模态框内容..
+                    </div>
+
+                    <!-- 模态框底部 -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="container-pop" class="container">
+          <h1>弹出框</h1>
+          <div class="card">
+            <div class="card-body">
+              <a href="javascript:void(0);" data-toggle="popover" title="弹出框标题" data-trigger="hover"
+                data-placement="left" data-content="弹出框内容">多次点击我</a>
+              <a href="javascript:void(0);" data-toggle="popover" title="弹出框标题" data-trigger="hover"
+                data-placement="bottom" data-content="弹出框内容">多次点击我</a>
+              <a href="javascript:void(0);" data-toggle="popover" title="弹出框标题" data-trigger="hover"
+                data-placement="top" data-content="弹出框内容">多次点击我</a>
+              <a href="javascript:void(0);" data-toggle="popover" title="弹出框标题" data-trigger="hover"
+                data-placement="right" data-content="弹出框内容">多次点击我</a>
+            </div>
+          </div>
+          <script>
+            $(document).ready(function () {
+              $('[data-toggle="popover"]').popover();
+            })
+
+          </script>
+        </div>
+
+        <div id="container-tool" class="container">
+          <h1>Bootstrap4 小工具</h1>
+          <div class="card">
+            <div class="card-header">
+              边框
+            </div>
+            <div class="card-body">
+              <span class="border"></span>
+              <span class="border border-0"></span>
+              <span class="border border-top-0"></span>
+              <span class="border border-right-0"></span>
+              <span class="border border-bottom-0"></span>
+              <span class="border border-left-0"></span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              边框颜色
+            </div>
+            <div class="card-body">
+              <span class="border border-primary"></span>
+              <span class="border border-secondary"></span>
+              <span class="border border-success"></span>
+              <span class="border border-danger"></span>
+              <span class="border border-warning"></span>
+              <span class="border border-info"></span>
+              <span class="border border-light"></span>
+              <span class="border border-dark"></span>
+              <span class="border border-white"></span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              边框圆角设置
+            </div>
+            <div class="card-body">
+              <span class="border-2 rounded"></span>
+              <span class="border-2 rounded-top"></span>
+              <span class="border-2 rounded-right"></span>
+              <span class="border-2 rounded-bottom"></span>
+              <span class="border-2 rounded-left"></span>
+              <span class="border-2 rounded-circle"></span>
+              <span class="border-2 rounded-0"></span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              浮动
+            </div>
+            <div class="card-body">
+              <div class="clearfix">
+                <span class="float-left">左浮动</span>
+                <span class="float-right">右浮动</span>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              响应式浮动
+            </div>
+            <div class="card-body">
+              <div class="float-sm-right">在大于小屏幕尺寸上右浮动</div><br>
+              <div class="float-md-right">在大于中等屏幕尺寸上右浮动</div><br>
+              <div class="float-lg-right">在大于大屏幕尺寸上右浮动</div><br>
+              <div class="float-xl-right">在大于超大屏幕尺寸上右浮动</div><br>
+              <div class="float-none">没有浮动</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              居中对齐
+            </div>
+            <div class="card-body">
+              <div class="mx-auto bg-warning" style="width:150px">居中显示</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              宽度
+            </div>
+            <div class="card-body">
+              <div class="w-25 bg-warning">宽度 25%</div>
+              <div class="w-50 bg-warning">宽度 50%</div>
+              <div class="w-75 bg-warning">宽度 75%</div>
+              <div class="w-100 bg-warning">宽度 100%</div>
+              <div class="mw-100 bg-warning">最大宽度 100%</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              高度
+            </div>
+            <div class="card-body">
+              <div class="row" style="height:200px;background-color:#ddd">
+                <div class="h-25 bg-warning">高度 25%</div>
+                <div class="h-50 bg-warning">高度 50%</div>
+                <div class="h-75 bg-warning">高度 75%</div>
+                <div class="h-100 bg-warning">高度 100%</div>
+                <div class="mh-100 bg-warning" style="height:500px">最大高度 100%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="container-flexlayout" class="container">
+          <h1>Bootstrap 4 Flex（弹性）布局</h1>
+          <div class="card">
+            <div class="card-body">
+              <p>弹性盒子(flexbox)</p>
+              <div class="d-flex p-3 bg-secondary text-white">
+                <div class="p-2 bg-info">Flex item 1</div>
+                <div class="p-2 bg-warning">Flex item 2</div>
+                <div class="p-2 bg-primary">Flex item 3</div>
+              </div>
+              <p>水平方向</p>
+              <div class="d-flex flex-row bg-secondary">
+                <div class="p-2 bg-info">Flex item 1</div>
+                <div class="p-2 bg-warning">Flex item 2</div>
+                <div class="p-2 bg-primary">Flex item 3</div>
+              </div>
+
+              <div class="d-flex flex-row-reverse bg-secondary">
+                <div class="p-2 bg-info">Flex item 1</div>
+                <div class="p-2 bg-warning">Flex item 2</div>
+                <div class="p-2 bg-primary">Flex item 3</div>
+              </div>
+              <p>垂直方向</p>
+              <div class="d-flex flex-column">
+                <div class="p-2 bg-info">Flex item 1</div>
+                <div class="p-2 bg-warning">Flex item 2</div>
+                <div class="p-2 bg-primary">Flex item 3</div>
+              </div>
+
+              <div class="d-flex flex-column-reverse">
+                <div class="p-2 bg-info">Flex item 1</div>
+                <div class="p-2 bg-warning">Flex item 2</div>
+                <div class="p-2 bg-primary">Flex item 3</div>
+              </div>
+              <p>内容排列</p>
+              <div>
+                <div class="d-flex justify-content-start bg-secondary mb-3">
+                  <div class="p-2 bg-info">Flex item 1</div>
+                  <div class="p-2 bg-warning">Flex item 2</div>
+                  <div class="p-2 bg-primary">Flex item 3</div>
+                </div>
+                <div class="d-flex justify-content-end bg-secondary mb-3">
+                  <div class="p-2 bg-info">Flex item 1</div>
+                  <div class="p-2 bg-warning">Flex item 2</div>
+                  <div class="p-2 bg-primary">Flex item 3</div>
+                </div>
+                <div class="d-flex justify-content-center bg-secondary mb-3">
+                  <div class="p-2 bg-info">Flex item 1</div>
+                  <div class="p-2 bg-warning">Flex item 2</div>
+                  <div class="p-2 bg-primary">Flex item 3</div>
+                </div>
+                <div class="d-flex justify-content-between bg-secondary mb-3">
+                  <div class="p-2 bg-info">Flex item 1</div>
+                  <div class="p-2 bg-warning">Flex item 2</div>
+                  <div class="p-2 bg-primary">Flex item 3</div>
+                </div>
+                <div class="d-flex justify-content-around bg-secondary mb-3">
+                  <div class="p-2 bg-info">Flex item 1</div>
+                  <div class="p-2 bg-warning">Flex item 2</div>
+                  <div class="p-2 bg-primary">Flex item 3</div>
+                </div>
+                <p>等宽</p>
+                <div class="d-flex">
+                  <div class="p-2 bg-info flex-fill">Flex item 1</div>
+                  <div class="p-2 bg-warning flex-fill">Flex item 2</div>
+                  <div class="p-2 bg-primary flex-fill">Flex item 3</div>
+                </div>
+                <p>扩展</p>
+                <div class="d-flex">
+                  <div class="p-2 bg-info">Flex item 1</div>
+                  <div class="p-2 bg-warning">Flex item 2</div>
+                  <div class="p-2 bg-primary flex-grow-1">Flex item 3</div>
+                </div>
+                <p>排序</p>
+                <div class="d-flex bg-secondary">
+                  <div class="p-2 bg-info order-3">Flex item 1</div>
+                  <div class="p-2 bg-warning order-2">Flex item 2</div>
+                  <div class="p-2 bg-primary order-1">Flex item 3</div>
+                </div>
+                <p>外边距</p>
+                <div class="d-flex bg-secondary">
+                  <div class="p-2 mr-auto bg-info">Flex item 1</div>
+                  <div class="p-2 bg-warning">Flex item 2</div>
+                  <div class="p-2 bg-primary">Flex item 3</div>
+                </div>
+
+                <div class="d-flex bg-secondary">
+                  <div class="p-2 bg-info">Flex item 1</div>
+                  <div class="p-2 bg-warning">Flex item 2</div>
+                  <div class="p-2 ml-auto bg-primary">Flex item 3</div>
+                </div>
+                <p>包裹</p>
+                <div class="d-flex flex-wrap bg-light">
+                  <div class="p-2 border">Flex item 1</div>
+                  <div class="p-2 border">Flex item 2</div>
+                  <div class="p-2 border">Flex item 3</div>
+                  <div class="p-2 border">Flex item 4</div>
+                  <div class="p-2 border">Flex item 5</div>
+                  <div class="p-2 border">Flex item 6</div>
+                  <div class="p-2 border">Flex item 7</div>
+                  <div class="p-2 border">Flex item 8</div>
+                  <div class="p-2 border">Flex item 9</div>
+                  <div class="p-2 border">Flex item 10</div>
+                  <div class="p-2 border">Flex item 11</div>
+                  <div class="p-2 border">Flex item 12</div>
+                  <div class="p-2 border">Flex item 13 </div>
+                  <div class="p-2 border">Flex item 14</div>
+                  <div class="p-2 border">Flex item 15</div>
+                  <div class="p-2 border">Flex item 16</div>
+                  <div class="p-2 border">Flex item 17</div>
+                  <div class="p-2 border">Flex item 18</div>
+                  <div class="p-2 border">Flex item 19</div>
+                  <div class="p-2 border">Flex item 20</div>
+                  <div class="p-2 border">Flex item 21</div>
+                  <div class="p-2 border">Flex item 22</div>
+                  <div class="p-2 border">Flex item 23</div>
+                  <div class="p-2 border">Flex item 24</div>
+                  <div class="p-2 border">Flex item 25</div>
+                </div>
+                <p>内容对齐</p>
+                <div class="d-flex flex-wrap align-content-start bg-light" style="height:300px">
+                  <div class="p-2 border">Flex item 1</div>
+                  <div class="p-2 border">Flex item 2</div>
+                  <div class="p-2 border">Flex item 3</div>
+                  <div class="p-2 border">Flex item 4</div>
+                  <div class="p-2 border">Flex item 5</div>
+                  <div class="p-2 border">Flex item 6</div>
+                  <div class="p-2 border">Flex item 7</div>
+                  <div class="p-2 border">Flex item 8</div>
+                  <div class="p-2 border">Flex item 9</div>
+                  <div class="p-2 border">Flex item 10</div>
+                  <div class="p-2 border">Flex item 11</div>
+                  <div class="p-2 border">Flex item 12</div>
+                  <div class="p-2 border">Flex item 13 </div>
+                  <div class="p-2 border">Flex item 14</div>
+                  <div class="p-2 border">Flex item 15</div>
+                  <div class="p-2 border">Flex item 16</div>
+                  <div class="p-2 border">Flex item 17</div>
+                  <div class="p-2 border">Flex item 18</div>
+                  <div class="p-2 border">Flex item 19</div>
+                  <div class="p-2 border">Flex item 20</div>
+                  <div class="p-2 border">Flex item 21</div>
+                  <div class="p-2 border">Flex item 22</div>
+                  <div class="p-2 border">Flex item 23</div>
+                  <div class="p-2 border">Flex item 24</div>
+                  <div class="p-2 border">Flex item 25</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
-
-  <div id="container-pop" class="container">
-    <h1>弹出框</h1>
-    <div class="card">
-      <div class="card-body">
-        <a href="javascript:void(0);" data-toggle="popover" title="弹出框标题" data-trigger="hover" data-placement="left"
-          data-content="弹出框内容">多次点击我</a>
-        <a href="javascript:void(0);" data-toggle="popover" title="弹出框标题" data-trigger="hover" data-placement="bottom"
-          data-content="弹出框内容">多次点击我</a>
-        <a href="javascript:void(0);" data-toggle="popover" title="弹出框标题" data-trigger="hover" data-placement="top"
-          data-content="弹出框内容">多次点击我</a>
-        <a href="javascript:void(0);" data-toggle="popover" title="弹出框标题" data-trigger="hover" data-placement="right"
-          data-content="弹出框内容">多次点击我</a>
-      </div>
-    </div>
-    <script>
-      $(document).ready(function () {
-        $('[data-toggle="popover"]').popover();
-      })
-
-    </script>
-  </div>
-
-  <div id="container-tool" class="container">
-    <h1>Bootstrap4 小工具</h1>
-    <div class="card">
-      <div class="card-header">
-        边框
-      </div>
-      <div class="card-body">
-        <span class="border"></span>
-        <span class="border border-0"></span>
-        <span class="border border-top-0"></span>
-        <span class="border border-right-0"></span>
-        <span class="border border-bottom-0"></span>
-        <span class="border border-left-0"></span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        边框颜色
-      </div>
-      <div class="card-body">
-        <span class="border border-primary"></span>
-        <span class="border border-secondary"></span>
-        <span class="border border-success"></span>
-        <span class="border border-danger"></span>
-        <span class="border border-warning"></span>
-        <span class="border border-info"></span>
-        <span class="border border-light"></span>
-        <span class="border border-dark"></span>
-        <span class="border border-white"></span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        边框圆角设置
-      </div>
-      <div class="card-body">
-        <span class="border-2 rounded"></span>
-        <span class="border-2 rounded-top"></span>
-        <span class="border-2 rounded-right"></span>
-        <span class="border-2 rounded-bottom"></span>
-        <span class="border-2 rounded-left"></span>
-        <span class="border-2 rounded-circle"></span>
-        <span class="border-2 rounded-0"></span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        浮动
-      </div>
-      <div class="card-body">
-        <div class="clearfix">
-          <span class="float-left">左浮动</span>
-          <span class="float-right">右浮动</span>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        响应式浮动
-      </div>
-      <div class="card-body">
-        <div class="float-sm-right">在大于小屏幕尺寸上右浮动</div><br>
-        <div class="float-md-right">在大于中等屏幕尺寸上右浮动</div><br>
-        <div class="float-lg-right">在大于大屏幕尺寸上右浮动</div><br>
-        <div class="float-xl-right">在大于超大屏幕尺寸上右浮动</div><br>
-        <div class="float-none">没有浮动</div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        居中对齐
-      </div>
-      <div class="card-body">
-        <div class="mx-auto bg-warning" style="width:150px">居中显示</div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        宽度
-      </div>
-      <div class="card-body">
-        <div class="w-25 bg-warning">宽度 25%</div>
-        <div class="w-50 bg-warning">宽度 50%</div>
-        <div class="w-75 bg-warning">宽度 75%</div>
-        <div class="w-100 bg-warning">宽度 100%</div>
-        <div class="mw-100 bg-warning">最大宽度 100%</div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        高度
-      </div>
-      <div class="card-body">
-        <div class="row" style="height:200px;background-color:#ddd">
-          <div class="h-25 bg-warning">高度 25%</div>
-          <div class="h-50 bg-warning">高度 50%</div>
-          <div class="h-75 bg-warning">高度 75%</div>
-          <div class="h-100 bg-warning">高度 100%</div>
-          <div class="mh-100 bg-warning" style="height:500px">最大高度 100%</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="container-flexlayout" class="container">
-    <h1>Bootstrap 4 Flex（弹性）布局</h1>
-    <div class="card">
-      <div class="card-body">
-        <p>弹性盒子(flexbox)</p>
-        <div class="d-flex p-3 bg-secondary text-white">
-          <div class="p-2 bg-info">Flex item 1</div>
-          <div class="p-2 bg-warning">Flex item 2</div>
-          <div class="p-2 bg-primary">Flex item 3</div>
-        </div>
-        <p>水平方向</p>
-        <div class="d-flex flex-row bg-secondary">
-          <div class="p-2 bg-info">Flex item 1</div>
-          <div class="p-2 bg-warning">Flex item 2</div>
-          <div class="p-2 bg-primary">Flex item 3</div>
-        </div>
-         
-        <div class="d-flex flex-row-reverse bg-secondary">
-          <div class="p-2 bg-info">Flex item 1</div>
-          <div class="p-2 bg-warning">Flex item 2</div>
-          <div class="p-2 bg-primary">Flex item 3</div>
-        </div>
-        <p>垂直方向</p>
-        <div class="d-flex flex-column">
-          <div class="p-2 bg-info">Flex item 1</div>
-          <div class="p-2 bg-warning">Flex item 2</div>
-          <div class="p-2 bg-primary">Flex item 3</div>
-        </div>
-         
-        <div class="d-flex flex-column-reverse">
-          <div class="p-2 bg-info">Flex item 1</div>
-          <div class="p-2 bg-warning">Flex item 2</div>
-          <div class="p-2 bg-primary">Flex item 3</div>
-        </div>
-        <p>内容排列</p>
-        <div>
-          <div class="d-flex justify-content-start bg-secondary mb-3">
-            <div class="p-2 bg-info">Flex item 1</div>
-            <div class="p-2 bg-warning">Flex item 2</div>
-            <div class="p-2 bg-primary">Flex item 3</div>
-          </div>
-          <div class="d-flex justify-content-end bg-secondary mb-3">
-            <div class="p-2 bg-info">Flex item 1</div>
-            <div class="p-2 bg-warning">Flex item 2</div>
-            <div class="p-2 bg-primary">Flex item 3</div>
-          </div>
-          <div class="d-flex justify-content-center bg-secondary mb-3">
-            <div class="p-2 bg-info">Flex item 1</div>
-            <div class="p-2 bg-warning">Flex item 2</div>
-            <div class="p-2 bg-primary">Flex item 3</div>
-          </div>
-          <div class="d-flex justify-content-between bg-secondary mb-3">
-            <div class="p-2 bg-info">Flex item 1</div>
-            <div class="p-2 bg-warning">Flex item 2</div>
-            <div class="p-2 bg-primary">Flex item 3</div>
-          </div>
-          <div class="d-flex justify-content-around bg-secondary mb-3">
-            <div class="p-2 bg-info">Flex item 1</div>
-            <div class="p-2 bg-warning">Flex item 2</div>
-            <div class="p-2 bg-primary">Flex item 3</div>
-          </div>
-          <p>等宽</p>
-          <div class="d-flex">
-            <div class="p-2 bg-info flex-fill">Flex item 1</div>
-            <div class="p-2 bg-warning flex-fill">Flex item 2</div>
-            <div class="p-2 bg-primary flex-fill">Flex item 3</div>
-          </div>
-          <p>扩展</p>
-          <div class="d-flex">
-            <div class="p-2 bg-info">Flex item 1</div>
-            <div class="p-2 bg-warning">Flex item 2</div>
-            <div class="p-2 bg-primary flex-grow-1">Flex item 3</div>
-          </div>
-          <p>排序</p>
-          <div class="d-flex bg-secondary">
-            <div class="p-2 bg-info order-3">Flex item 1</div>
-            <div class="p-2 bg-warning order-2">Flex item 2</div>
-            <div class="p-2 bg-primary order-1">Flex item 3</div>
-          </div>
-          <p>外边距</p>
-          <div class="d-flex bg-secondary">
-            <div class="p-2 mr-auto bg-info">Flex item 1</div>
-            <div class="p-2 bg-warning">Flex item 2</div>
-            <div class="p-2 bg-primary">Flex item 3</div>
-          </div>
-           
-          <div class="d-flex bg-secondary">
-            <div class="p-2 bg-info">Flex item 1</div>
-            <div class="p-2 bg-warning">Flex item 2</div>
-            <div class="p-2 ml-auto bg-primary">Flex item 3</div>
-          </div>
-          <p>包裹</p>
-          <div class="d-flex flex-wrap bg-light">
-            <div class="p-2 border">Flex item 1</div>
-            <div class="p-2 border">Flex item 2</div>
-            <div class="p-2 border">Flex item 3</div>
-            <div class="p-2 border">Flex item 4</div>
-            <div class="p-2 border">Flex item 5</div>
-            <div class="p-2 border">Flex item 6</div>
-            <div class="p-2 border">Flex item 7</div>
-            <div class="p-2 border">Flex item 8</div>
-            <div class="p-2 border">Flex item 9</div>
-            <div class="p-2 border">Flex item 10</div>
-            <div class="p-2 border">Flex item 11</div>
-            <div class="p-2 border">Flex item 12</div>
-            <div class="p-2 border">Flex item 13 </div>
-            <div class="p-2 border">Flex item 14</div>
-            <div class="p-2 border">Flex item 15</div>
-            <div class="p-2 border">Flex item 16</div>
-            <div class="p-2 border">Flex item 17</div>
-            <div class="p-2 border">Flex item 18</div>
-            <div class="p-2 border">Flex item 19</div>
-            <div class="p-2 border">Flex item 20</div>
-            <div class="p-2 border">Flex item 21</div>
-            <div class="p-2 border">Flex item 22</div>
-            <div class="p-2 border">Flex item 23</div>
-            <div class="p-2 border">Flex item 24</div>
-            <div class="p-2 border">Flex item 25</div>
-          </div>
-          <p>内容对齐</p><div class="d-flex flex-wrap align-content-start bg-light" style="height:300px">
-            <div class="p-2 border">Flex item 1</div>
-            <div class="p-2 border">Flex item 2</div>
-            <div class="p-2 border">Flex item 3</div>
-            <div class="p-2 border">Flex item 4</div>
-            <div class="p-2 border">Flex item 5</div>
-            <div class="p-2 border">Flex item 6</div>
-            <div class="p-2 border">Flex item 7</div>
-            <div class="p-2 border">Flex item 8</div>
-            <div class="p-2 border">Flex item 9</div>
-            <div class="p-2 border">Flex item 10</div>
-            <div class="p-2 border">Flex item 11</div>
-            <div class="p-2 border">Flex item 12</div>
-            <div class="p-2 border">Flex item 13 </div>
-            <div class="p-2 border">Flex item 14</div>
-            <div class="p-2 border">Flex item 15</div>
-            <div class="p-2 border">Flex item 16</div>
-            <div class="p-2 border">Flex item 17</div>
-            <div class="p-2 border">Flex item 18</div>
-            <div class="p-2 border">Flex item 19</div>
-            <div class="p-2 border">Flex item 20</div>
-            <div class="p-2 border">Flex item 21</div>
-            <div class="p-2 border">Flex item 22</div>
-            <div class="p-2 border">Flex item 23</div>
-            <div class="p-2 border">Flex item 24</div>
-            <div class="p-2 border">Flex item 25</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <hr>
+  <br>
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <p>Footer</p>
     </div>
   </div>
 </body>
-
 </html>
